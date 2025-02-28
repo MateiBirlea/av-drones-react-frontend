@@ -258,12 +258,12 @@ const handleFileChange = (event) => {
  const { data: friendRequests, error } = useSWR(
   id ? ["http://localhost:8081/get_requests", id] : null, 
   ([url, id]) => fetcher(url, id),
-  { refreshInterval: 2000 } 
+  { refreshInterval: 1000 } 
 );
 const {data: friends,error1}= useSWR(
   username ? ["http://localhost:8081/get_friends",username]:null,
   ([url,username])=>fetcher1(url,username),
-  {refreshInterval: 2000}
+  {refreshInterval: 1000}
 )
 useEffect(() => {
   if (friends) {
@@ -320,8 +320,8 @@ const unreadRequests = friendRequests ? Math.max(friendRequests.length - seenReq
           {activeTab === "Account" && (
           <div className="tab-content">
             
-            <div className="circular-image1">
-             {url &&  <img src={url}  className="circular-image123" />}
+            <div className="circular-image1"  >
+               <img src={url}    className="circular-image123" />
               <input
                 type="file"
                 accept="image/*"
