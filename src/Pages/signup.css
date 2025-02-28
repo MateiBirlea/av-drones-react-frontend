@@ -1,0 +1,32 @@
+.blurred-background {
+    position: relative; 
+    height: 100vh; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+  }
+  
+  .blurred-background::before {
+    content: ''; /* Necesită un conținut, chiar dacă este gol */
+    position: absolute; /* Pseudo-elementul va ocupa întregul container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./images/drone.jpg'); /* Imaginea de fundal */
+    background-size: cover; /* Acoperă tot spațiul */
+    background-position: center; /* Imaginea este centrată */
+    filter: blur(10px); /* Aplică blur doar pe imaginea de fundal */
+    z-index: -1; /* Asigură că fundalul rămâne în spate */
+  }
+  .l_status {
+    color: red; 
+    font-size: 1.2rem; 
+    margin: 10px 0; 
+    text-align: center; 
+    z-index:3;
+}
+
+

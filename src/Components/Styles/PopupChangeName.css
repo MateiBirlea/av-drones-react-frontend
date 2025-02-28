@@ -1,0 +1,148 @@
+/* Stil pentru overlay-ul pop-up-ului */
+.popup-change-name-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Fundal blur */
+  background: rgba(0, 0, 0, 0.5); /* Fundal semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Stil pentru conținutul pop-up-ului */
+.popup-change-name-content {
+  background: #1d2733; /* Fundal gri-albăstrui modern */
+  padding: 30px;
+  border-radius: 12px; /* Colțuri rotunjite */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Umbră profundă */
+  width: 90%;
+  max-width: 450px; /* Dimensiune fixă */
+  text-align: center;
+  color: #e4e8f0; /* Text gri-alb */
+  font-family: 'Segoe UI', sans-serif; /* Font modern */
+}
+
+/* Stil pentru titlul pop-up-ului */
+.popup-change-name-content h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff; /* Alb pur */
+  letter-spacing: 1px; /* Spațiere între litere */
+  text-transform: uppercase;
+}
+
+/* Stil pentru câmpul de intrare */
+.popup-change-name-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #3e4756;
+  border-radius: 8px;
+  background: #0f1620; /* Fundal întunecat */
+  color: #ffffff;
+  margin-top: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup-change-name-input:focus {
+  border-color: #61dafb; /* Bordură albastră deschisă */
+  outline: none;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.5); /* Lumină albastră */
+}
+
+/* Stil pentru butoane */
+.popup-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px; /* Colțuri rotunjite moderne */
+  font-size: 14px;
+  font-weight: 600; /* Subțire, dar lizibil */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Umbra subtilă */
+}
+
+/* Efect de gradient și animare la hover */
+.popup-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.popup-button:hover::after {
+  left: 100%;
+}
+
+.popup-button:hover {
+  transform: scale(1.02); /* Efect de mărire subtilă */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); /* Umbra devine mai intensă */
+}
+
+.popup-button:active {
+  transform: scale(0.98); /* Efect apăsat */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Buton albastru */
+.popup-change-name-btn-confirm {
+  background: linear-gradient(90deg, #004080, #0056b3); /* Gradient mai modern */
+  color: #ffffff;
+}
+
+.popup-change-name-btn-confirm:hover {
+  background: linear-gradient(90deg, #0056b3, #004080); /* Inversare gradient */
+}
+
+/* Buton vișiniu */
+.popup-change-name-btn-close1 {
+  background: linear-gradient(90deg, #660000, #990000); /* Vișiniu profund */
+  color: #ffffff;
+}
+
+.popup-change-name-btn-close1:hover {
+  background: linear-gradient(90deg, #990000, #660000); /* Inversare gradient */
+}
+
+/* Stil pentru mesajul de eroare */
+.error-message {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: left;
+  font-style: italic;
+}
+.valid-message {
+  color: green;
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: left;
+  font-style: italic;
+}
+/* Container pentru butoane */
+.popup-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px; /* Spațiu între butoane */
+  margin-top: 20px;
+}

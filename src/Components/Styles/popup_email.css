@@ -1,0 +1,131 @@
+/* Stil pentru overlay-ul pop-up-ului */
+.email-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Fundal blur */
+  background: rgba(0, 0, 0, 0.5); /* Fundal semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Stil pentru conținutul pop-up-ului */
+.email-popup-content {
+  background: #1d2733; /* Fundal gri-albăstrui modern */
+  padding: 30px;
+  border-radius: 12px; /* Colțuri rotunjite */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Umbră profundă */
+  width: 90%;
+  max-width: 450px; /* Dimensiune fixă */
+  text-align: center;
+  color: #e4e8f0; /* Text gri-alb */
+  font-family: 'Segoe UI', sans-serif; /* Font modern */
+  z-index: 10000;
+}
+
+/* Stil pentru formularul din pop-up */
+.email-popup-form {
+  margin-top: 15px;
+}
+
+/* Stil pentru eticheta formularului */
+.email-popup-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e4e8f0; /* Gri deschis */
+  text-align: left; /* Aliniere la stânga */
+}
+
+/* Stil pentru câmpul de intrare */
+.email-popup-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #3e4756; /* Bordură gri închis */
+  border-radius: 8px; /* Colțuri rotunjite */
+  background: #0f1620; /* Fundal întunecat */
+  color: #ffffff;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.email-popup-input:focus {
+  border-color: #61dafb; /* Bordură albastră deschisă */
+  outline: none;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.5); /* Lumină albastră */
+}
+
+/* Stil pentru butonul "Save" */
+.email-popup-save-btn {
+  background: linear-gradient(90deg, #004080, #0056b3); /* Gradient mai modern */
+  color: #ffffff;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px; /* Colțuri rotunjite */
+  font-size: 15px;
+  font-weight: 600; /* Text semi-bold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.email-popup-save-btn:hover {
+  background: linear-gradient(90deg, #0056b3, #004080); /* Inversare gradient */
+  transform: scale(1.02); /* Efect de mărire subtilă */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); /* Umbra devine mai intensă */
+}
+
+.email-popup-save-btn:active {
+  transform: scale(0.98); /* Efect apăsat */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Stil pentru butonul "Close" */
+.email-popup-close-btn {
+  background-color: transparent; /* Fără fundal */
+  color: #f44336; /* Roșu modern */
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: 2px solid #f44336; /* Bordură roșie subțire */
+  border-radius: 8px; /* Colțuri rotunjite */
+  font-size: 15px;
+  font-weight: 600; /* Text semi-bold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.email-popup-close-btn:hover {
+  background-color: #f44336; /* Fundal roșu la hover */
+  color: white; /* Text alb */
+  border-color: transparent;
+}
+
+/* Stil pentru mesajul de eroare */
+.error-message-email {
+  color: #ff6b6b; /* Roșu deschis pentru eroare */
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: left;
+  font-style: italic;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Container pentru butoane */
+.popup-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px; /* Spațiu între butoane */
+  margin-top: 20px;
+}

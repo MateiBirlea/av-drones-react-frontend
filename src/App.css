@@ -1,0 +1,698 @@
+body {
+  overflow: hidden; }
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/drone.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.layout-nav {
+    width: 794px;
+    height: 22px;
+    position: absolute;
+    top: 108px;
+    left: 46px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 16px;
+}
+
+    .layout-nav li {
+        position: relative;
+        display: inline-block;
+        margin-right: 100px;
+    }
+        .layout-nav li:last-child {
+            margin-right: 0; 
+        }
+    .layout-nav a {
+        text-decoration: none;
+        color: #FFFFFF;
+        padding-bottom: 5px;
+        position: relative;
+    }
+
+        .layout-nav a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFFFFF; 
+            visibility: hidden;
+            transition: all 0.3s ease-in-out; 
+        }
+
+        .layout-nav a:hover::before {
+            visibility: visible;
+            width: 100%; 
+        }
+        .av_drones {
+            position: absolute;
+            width: 300px;
+            height: 32px;
+            top: 10px; /* DistanÈ›a de sus */
+            left: 85px; /* DistanÈ›a de la stÃ¢nga */
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 900; /* Greutatea fontului */
+            font-size: 20px; /* Dimensiunea fontului */
+            line-height: 31.73px; /* ÃŽnÄƒlÈ›imea liniei */
+            color: #FFFFFF; /* Culoarea textului */
+        }
+        
+        .line-image {
+            position: absolute;
+            width: 420px; /* LÄƒÈ›imea imaginii */
+            height: 2px; /* ÃŽnÄƒlÈ›imea imaginii */
+            top: 710px; /* PoziÈ›ia de sus */
+            left: 90px; /* PoziÈ›ia de la stÃ¢nga */
+            border-radius: 2px; /* ColÈ›urile rotunjite */
+            object-fit: cover;
+            background-color: rgba(255, 255, 255, 0);
+            /*max-width: 100%;*/
+        }
+        .vertical-image {
+            position: absolute;
+            width: 3px; /* LÄƒÈ›imea specificatÄƒ */
+            height: 10px; /* ÃŽnÄƒlÈ›imea specificatÄƒ */
+            top: 706px; /* PoziÈ›ia de sus */
+            left: 510px; /* PoziÈ›ia de la stÃ¢nga */
+            border-radius: 6px; /* Radius pentru colÈ›urile rotunjite */
+            background-color: rgba(255, 255, 255, 0);
+        }
+        .just-fly {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+            font-size: 125px;
+            line-height: 183.03px;
+            letter-spacing: -0.1em; 
+            color: #FFFFFF;
+            position: absolute;
+            top: 210px;
+            left: 90px;
+            width: 702px;
+            height: 183px;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
+        }
+        .pause {
+            position: absolute;
+            width: 45px; /* LÄƒÈ›imea imaginii */
+            height: 30px; /* ÃŽnÄƒlÈ›imea imaginii */
+            top: 695px; /* PoziÈ›ia de sus */
+            left: 1180px; /* PoziÈ›ia de la stÃ¢nga */
+        }
+        .rectangle{
+            position: absolute;
+            width:200px;
+            height:50px;
+            top:685px;
+            left:1230px;
+        }
+        .pause2 {
+            position: absolute;
+            width: 45px; /* LÄƒÈ›imea imaginii */
+            height: 30px; /* ÃŽnÄƒlÈ›imea imaginii */
+            top: 695px; /* PoziÈ›ia de sus */
+            left: 1440px; /* PoziÈ›ia de la stÃ¢nga */
+        }
+        .rectangle2 {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            top: 685px;
+            left: 1230px;
+        }
+        .play_video {
+            position: absolute;
+            width: 106px; /* LÄƒÈ›imea specificatÄƒ */
+            height: 20px; /* ÃŽnÄƒlÈ›imea specificatÄƒ */
+            top: 690px; /* PoziÈ›ia faÈ›Äƒ de partea de sus a paginii */
+            left: 1280px; /* PoziÈ›ia faÈ›Äƒ de partea stÃ¢ngÄƒ a paginii */
+        
+            font-family: 'Poppins', sans-serif; /* Fontul Poppins */
+            font-weight: 400; /* Greutatea fontului */
+            font-size: 16px; /* Dimensiunea fontului */
+            line-height: 19.52px; /* ÃŽnÄƒlÈ›imea liniei */
+            letter-spacing: 11.5%; /* SpaÈ›ierea Ã®ntre litere */
+        
+            color: #FFFFFF; /* Culoarea textului */
+        }
+        .line_v1 {
+            width: 1px; /* LÄƒÈ›imea elementului */
+            height: 170px; /* ÃŽnÄƒlÈ›imea elementului */
+            position: absolute;
+            top: 465px; /* PoziÈ›ionare faÈ›Äƒ de partea de sus */
+            left: 1465px; /* PoziÈ›ionare faÈ›Äƒ de partea stÃ¢ngÄƒ */
+            border-radius: 10px; /* ColÈ›uri rotunjite */
+            background-color: rgba(255, 255, 255, 0); /* Fundal transparent */
+        }
+        .line_v2 {
+            width: 170px;
+            height: 1px;
+            position: absolute;
+            top: 215px;
+            left: 1380px;
+            background-color: rgba(217, 217, 217, 0.31); /* Culoare cu transparenÈ›Äƒ 31% */
+            transform: rotate(90deg); /* Rotire la 90 de grade */
+        }
+        .mouse_scroll {
+            position: absolute;
+            width: 90px;
+            height: 10px;
+            top: 365px;
+            left: 1410px;
+            transform: rotate(270deg); /* Rotire la 90 de grade */
+            font-family: 'Anek Latin', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20.4px;
+            letter-spacing: 0.01em; /* 17% spaÈ›iere Ã®ntre litere */
+            color: #FFFFFF; /* Culoarea textului */
+            white-space: nowrap;
+        }
+        .instagram {
+            position: absolute;
+            width: 24px; /* LÄƒÈ›imea imaginii */
+            height: 24px; /* ÃŽnÄƒlÈ›imea imaginii */
+            top: 105px; /* PoziÈ›ia faÈ›Äƒ de partea de sus */
+            left: 1415px; /* PoziÈ›ia faÈ›Äƒ de partea stÃ¢ngÄƒ */
+        }
+        .facebook {
+            position: absolute;
+            width: 24px; /* LÄƒÈ›imea imaginii */
+            height: 24px; /* ÃŽnÄƒlÈ›imea imaginii */
+            top: 70px; /* PoziÈ›ia faÈ›Äƒ de partea de sus */
+            left: 1415px; /* PoziÈ›ia faÈ›Äƒ de partea stÃ¢ngÄƒ */
+        }
+        
+      .login-signup {
+        position: absolute;
+        top: 120px; /* Poziționare ajustabilă */
+        left: 40px; /* Poziționare ajustabilă */
+        font-size: 20px; /* Dimensiune mai mare pentru un aspect premium */
+        font-weight: 500; /* Font mediu pentru eleganță */
+        font-family: 'Playfair Display', serif; /* Font elegant */
+        color: #fff; /* Text alb */
+        text-decoration: none; /* Elimină sublinierea */
+        transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Tranziție fluidă */
+    }
+    
+    /* Efect de hover */
+    .login-signup:hover {
+        color: #f8e71c; /* Schimbă culoarea în auriu */
+        text-shadow: 0px 0px 10px rgba(248, 231, 28, 0.8); /* Strălucire ușoară */
+    }
+    
+        .side-nav {
+            width: 0px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 30px 0px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            transition: width 0.5s; /* AdaugÄƒ tranziÈ›ia pentru lÄƒÈ›ime */
+            display: flex; /* Face flex container */
+            align-items: flex-start;
+        }
+        .side-nav.active{
+            width: 40px;
+            padding: 30px 15px;
+
+        }
+        .side-nav:hover{
+            width: 250px;
+        }
+       
+        .panel_image {
+            width: 60px;
+            height: 700px;
+            position: absolute;
+            top: 15px;
+            left :5px;
+            border-radius: 20px;
+            transition: width 0.5s, border-radius 0.5s;
+        }
+        .side-nav:hover .panel_image {
+            width: 250px;
+            height: 700px;
+            border-radius: 10px;
+        }
+        
+        .logo_1 {
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            width: 40px; /* SeteazÄƒ dimensiunea corectÄƒ */
+            height: 40px; /* SeteazÄƒ dimensiunea corectÄƒ */
+            z-index: 2;
+            object-fit: cover; /* Imaginea va acoperi Ã®ntregul container, pÄƒstrÃ¢nd proporÈ›iile */
+        }
+        .logo_2 {
+            position: absolute;
+            top: 55px;
+            left: 21px;
+            width: 30px; /* SeteazÄƒ dimensiunea corectÄƒ */
+            height: 30px; /* SeteazÄƒ dimensiunea corectÄƒ */
+            z-index: 2;
+            object-fit: cover; /* Imaginea va acoperi Ã®ntregul container, pÄƒstrÃ¢nd proporÈ›iile */
+        }
+        .text_1 {
+            position: absolute;
+            width: 200px;  /* LÄƒÈ›imea textului */
+            height: 10px;  /* ÃŽnÄƒlÈ›imea textului */
+            top: 45px;     /* DistanÈ›a faÈ›Äƒ de partea de sus a containerului */
+            left: 80px;  /* DistanÈ›a faÈ›Äƒ de partea din stÃ¢nga a containerului */
+        
+            font-family: 'Avenir', sans-serif; /* Familia de font */
+            font-weight: 900;                  /* Greutatea fontului */
+            font-size: 16px;                   /* Dimensiunea fontului */
+            line-height: 31.73px;              /* ÃŽnÄƒlÈ›imea liniei */
+            color:  #FFFFFF;
+            object-fit: cover;                   /* Culoarea textului (poÈ›i modifica dupÄƒ nevoie) */
+        }
+        .z {
+            list-style-type: none; /* EliminÄƒ punctele din faÈ›a fiecÄƒrui element */
+            padding: 0; /* EliminÄƒ spaÈ›iul suplimentar din jurul listei */
+            transform: translateY(100px);
+            z-index: 2;
+            
+        }
+        
+        .z li {
+            left:18px;
+            top:20px;
+            display: flex; /* AliniazÄƒ imaginea È™i textul pe orizontalÄƒ */
+            align-items: center; /* CentreazÄƒ vertical imaginea È™i textul */
+            font-size: 16px; /* Dimensiunea textului */
+            padding: 2px 0; /* Reduci padding-ul de sus È™i jos */
+            margin-bottom: 5px; /* Controlezi spaÈ›ierea dintre elementele din listÄƒ */
+            position: relative; /* PoziÈ›ionare relativÄƒ */
+        }
+        
+        .z li img {
+            width: 23px; 
+            height: auto; 
+            margin-right: 12px; 
+        }
+        
+        .z li p {
+            color: #7A7D86;
+            font-family: 'Anek Latin', sans-serif;
+            line-height: 1.2;
+            margin: 0;
+            font-size: 14px; /* AjusteazÄƒ aceastÄƒ valoare dupÄƒ preferinÈ›e */
+        }
+        
+        .search{
+            position:absolute;
+            height: 22px;
+            width: 22px;
+            top:112px;
+            left:24px;
+        }
+        .line_v{
+            position:absolute;
+            z-index:2;
+            top:500px;
+            left:19px;
+            height: 1.5px;
+            width: 35px;
+        }
+        .side-nav:hover .line_v {
+            height: 3px;
+            width: 220px;
+        }
+        .search_r {
+            position: absolute;
+            z-index: 2;
+            top: 110px;
+            left: 20px;
+            height: 25px;
+            width: 35px;
+            overflow: hidden; 
+            border-radius: 5px; 
+            transition: width 0.3s ease, border-radius 0.3s ease; 
+        }
+        
+        .side-nav:hover .search_r {
+            height: 25px !important;
+            width: 165px !important;
+            border-radius: 10px; 
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+        
+        .dot_line
+        {
+            position:absolute;
+            color:#FFFFFF;
+            top:30px;
+            left:30px;
+            width: 100px;
+            height: 100px;
+        }
+        ul.z li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 2px 10px; 
+        }
+        .vector-icon {
+            width: 8px !important;
+            height: 6px !important;
+            margin-left: 70px !important;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        ul.z{
+            margin-left: -20px;
+        }
+        ul.z li p {
+            margin-left: 10px; 
+        }
+        
+        .elipse {
+            display: flex; 
+            gap: 7px; 
+            margin-top: 30px;
+            position: absolute;
+            left:17px;
+            top: 25px;
+            z-index: 3; 
+            margin: 0;
+            padding: 0;
+            list-style: none; 
+          }
+          .elipse li img {
+            width: 8px;
+            height: 8px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+          .menu_2 {
+            position: absolute;
+            top: 480px; 
+            left: 18px; 
+            z-index: 3; /* AsigurÄƒ-te cÄƒ este deasupra altor elemente */
+            width: 200px; /* LÄƒÈ›imea meniului */
+            padding: 10px; /* SpaÈ›iu interior */
+            border-radius: 5px; /* ColÈ›uri rotunjite */
+            list-style: none; /* EliminÄƒ punctele de listÄƒ */
+          }
+          .menu_1 {
+            position: absolute;
+            top: 140px; /* PoziÈ›ioneazÄƒ meniul la 20px de sus */
+            left: 20px; /* PoziÈ›ioneazÄƒ meniul la 20px de la stÃ¢nga */
+            z-index: 3; /* AsigurÄƒ-te cÄƒ este deasupra altor elemente */
+            width: 200px; /* LÄƒÈ›imea meniului */
+            padding: 10px; /* SpaÈ›iu interior */
+            border-radius: 5px; /* ColÈ›uri rotunjite */
+            list-style: none; /* EliminÄƒ punctele de listÄƒ */
+          }
+          .sub_menu{
+            display: none;
+            color: #7A7D86;
+            font-family: 'Anek Latin', sans-serif;
+            margin-left: 20 px;
+          }
+          .menu_1 .open .sub_menu{
+            display:block;
+            color: #7A7D86;
+            font-family: 'Anek Latin', sans-serif;
+            margin-left: 20px;
+          }
+          .h_icon{
+            display:none;
+            height: 20px;
+            width: 20px;
+          }
+          .d_icon{
+            display:none;
+            height: 20px;
+            width: 20px;
+          }
+          .d_projects{
+            display:none;
+            display:none;
+            height: 22px;
+            width: 25px;
+          }
+          .d_tasks{
+            display:none;
+            height: 20px;
+            width: 20px;
+          }
+          .d_reporting{
+            
+            height: 20px;
+            width: 20px;
+          }
+          .d_users{
+            display:none;
+            height: 20px;
+            width: 20px;
+          }
+          b_icon{
+            height: 20px;
+            width: 20px;
+          }
+          s_icon{
+            height: 20px;
+            width: 20px;
+          }
+          se_icon{
+            height: 20px;
+            width: 20px;
+          }
+          .menu_1 p {
+            
+            display: flex; /* AliniazÄƒ imaginea È™i textul pe orizontalÄƒ */
+            align-items: center; /* CentreazÄƒ vertical imaginea È™i textul */
+            gap: 10px; /* SpaÈ›iu Ã®ntre imagine È™i text */
+            margin: 0;
+            padding: 5px 0;
+          }
+          .menu_2 p{
+           
+            display:flex;
+            align-items: center;
+            gap: 10px;
+            margin:0;
+            padding: 5px 0px;
+          }
+          .menu_2 li:nth-child(3) img{
+            
+            position:relative;
+            margin-left: -8px !important;
+          }
+          .text{
+            
+            margin-left: 10px;
+            color: #7A7D86;
+            font-family: 'Anek Latin', sans-serif;
+          }
+          .t{
+           
+            margin-left: 6px;
+            color: #7A7D86;
+            font-family: 'Anek Latin', sans-serif;
+          }
+          .s_1{
+            
+            margin-left: 80px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_2{
+            
+            margin-left:47px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_3{
+            margin-left:63px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_4{
+            margin-left:82px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_5{
+            margin-left:53px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_6{
+            margin-left:82px;
+            transition: transform 0.2s ease-in-out;
+          }
+          .s_1.rotated {
+            transform: rotate(180deg); 
+        }
+        .s_2.rotated {
+            transform: rotate(180deg); 
+        }
+        .s_3.rotated {
+            transform: rotate(180deg); 
+        }
+        .s_4.rotated {
+            transform: rotate(180deg); 
+        }
+        .s_5.rotated {
+            transform: rotate(180deg); 
+        }
+        .s_6.rotated {
+            transform: rotate(180deg); 
+        }
+        .sign {
+          position: absolute;
+          color: #FFFFFF;
+          height: 10px;
+          width: 60px;
+          left: 30px;        
+          top: 600px;        
+          font-size: 0.8em; 
+          z-index: 3;
+        }
+        .login {
+          position: absolute;
+          color: #FFFFFF;
+          height: 10px;
+          width: 60px;
+          left: 90px;        
+          top: 600px;        
+          font-size: 0.8em; 
+          z-index: 3;
+        }
+        .logout {
+          position: absolute;
+          color: #FFFFFF;
+          height: 10px;
+          width: 60px;
+          left: 180px;        
+          top: 600px;        
+          font-size: 0.8em; 
+          z-index: 3;
+        }
+        .upload {
+          position: absolute;
+          color: #FFFFFF;
+          height: 10px;
+          width: 60px;
+          left: 180px;        
+          top: 550px;        
+          font-size: 0.8em; 
+          z-index: 3;
+        }
+        .acc{
+          position:absolute;
+          height: 0px;
+          width: 0px;
+          top: 640px;
+          left:20px;
+          transition: height 0.3s ease, width 0.3s ease;
+        }
+        .side-nav:hover .acc{
+          height: 55px;
+          width: 180px;
+        }
+     
+     .dots-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5px; 
+      z-index:10;
+      margin-top:648px;
+      margin-left:170px
+     }
+
+
+     
+     .account {
+      display: block;
+      visibility: visible;
+      position: relative; 
+      z-index: 3;
+      color: #ffffff; 
+      padding: 15px; 
+      border-radius: 8px; 
+      margin-top: -45px; 
+      margin-left : 40px;
+  }
+  
+  .mm {
+      visibility: hidden;
+      font-size: 0.9em;
+      margin-bottom: 3px;
+      color :#C5CADA;
+      font-family: 'Anek Latin', sans-serif;
+
+  }
+  
+  .me {
+      visibility:hidden ;
+      font-size: 0.6em;
+      color: #7A7D86;
+      font-family: 'Anek Latin', sans-serif;
+  }
+  .side-nav:hover .mm{
+    visibility: visible;
+  }
+  .side-nav:hover .me{
+    visibility: visible;
+  }
+  .cerc {
+    position: absolute;
+    width: 40px;                  
+    height: 40px;                 
+    border: 2px solid gray;      
+    border-radius: 50%;           
+    margin-top: -63px;            
+    margin-left: 8px;            
+    z-index: 3;                   
+    background-color: transparent;
+}
+
+.profil {
+  width: 35px;             
+  height: 35px;            
+  border-radius: 50%;       
+  object-fit: cover;        
+  border: 2px solid #ddd;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  display: block;           
+  margin: 0 auto; 
+  z-index: 3;
+  margin-top:-45px;   
+  margin-left: -45px;       
+}
+.profil1 {
+  width: 35px;             
+  height: 35px;            
+  border-radius: 50%;       
+  object-fit: cover;        
+  border: 2px solid #ddd;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  display: block;           
+  margin: 0 auto; 
+  z-index: 3;
+  margin-top:15px;   
+  margin-left: -45px;       
+}
+.elipse{
+  top:17px;
+}
+@font-face {
+  font-family: 'Anek Latin';
+  src: url('./path_to_your_local_fonts/aneklatin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

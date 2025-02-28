@@ -1,0 +1,544 @@
+/* Stil general pentru pagina */
+body {
+    font-family: 'Avenir', sans-serif;
+    margin: 0;
+    background-color: #1d2733;
+    color: #C4C8D4;
+  }
+  
+  /* Popup-ul general */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .refractor{
+    margin-top :100px;
+  }
+  .popup-content {
+    background: #252e3f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    width: 600px;
+    height: 700px;
+    /*max-width: 600px;*/
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  
+  /* Antetul popup-ului */
+  .popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Bulinele colorate */
+  .bullets {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .bullet.red {
+    background-color: #f28d8d;
+  }
+  
+  .bullet.yellow {
+    background-color: #ffcc5c;
+  }
+  
+  .bullet.green {
+    background-color: #6ccf6d;
+  }
+  
+  /* Butoanele de tab-uri */
+  .tab-button {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .tab-button.active {
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+  }
+  
+  /* Corpul popup-ului */
+  .popup-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  
+  
+  .close-btn {
+    margin-top:-15px !important;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .close-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px; /* Reducem padding-ul */
+  background-color: transparent; /* Fundalul transparent */
+  border-radius: 8px;
+  height: 500px;
+  width: 100px;
+  color: #C4C8D4; /* Culoare text */
+  gap: 15px; /* Spațiere mai mică între secțiuni */
+  max-height: 600px; /* Limităm înălțimea maximă */
+  animation: fadeIn 0.3s ease-in-out; /* Animație de tranziție */
+}
+
+.section {
+  display: flex;
+  width: 100%; /* Setăm lățimea completă a containerului părinte */
+  max-width: 1000px; /* Opțional: limităm lățimea maximă */
+  flex-direction: column;
+  gap: 2px; /* Reducem distanța dintre elemente */
+  padding-bottom: 10px; /* Reducem spațiul dintre secțiuni */
+  transform: translateX(130px) translateY(-120px) scale(0.9); /* Micșorăm secțiunea și apropiem elementele */
+  transform-origin: top left; /* Transformarea începe din colțul stânga sus */
+  box-sizing: border-box; /* Include padding și border în dimensiunea totală */
+  position: relative;
+  color:#C4C8D4;
+}
+.section:last-child {
+  border-bottom: none; /* Eliminăm linia de la ultima secțiune */
+}
+/* Eliminăm linia de la primele două secțiuni */
+.section:nth-child(-n+2) {
+  border-bottom: none;
+}
+
+/* Titlul secțiunii */
+.section h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #C4C8D4;
+  white-space: nowrap;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Conținutul secțiunii */
+.section .content {
+  display: flex; /* Flex pentru afișare pe un rând */
+  flex-wrap: wrap; /* Permite împachetarea dacă spațiul nu este suficient */
+  align-items: center; /* Aliniere verticală pe centru */
+  gap: 2px; /* Spațiu între elemente */
+}
+
+.section p {
+  margin: 0;
+  font-size: 13px;
+  color: #C4C8D4;
+  white-space: nowrap; /* Forțează textul să fie pe o singură linie */
+  overflow: hidden; /* Ascunde textul care depășește lățimea containerului */
+  overflow: visible; /* Asigură că textul nu este tăiat */
+  text-overflow: clip; /* Elimină punctele de suspensie */
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 100;
+}
+
+
+.section a {
+  font-size: 14px;
+  color: #61C6F9;
+  text-decoration: none;
+  white-space: nowrap; /* Previne împărțirea pe mai multe linii */
+  
+}
+.section:last-of-type a:last-child {
+  color: red; /* Schimbă culoarea ultimului link din ultima secțiune în roșu */
+}
+
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+
+/* Buton pentru conexiuni */
+.add-connection-btn,
+.add-friend-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-connection-btn:hover,
+.add-friend-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Imagini prieteni */
+.friends-list {
+  display: flex;
+  gap: 10px;
+}
+
+.friend-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #444;
+}
+
+/* Buton pentru ștergerea contului */
+.delete-account-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-account-btn:hover {
+  background-color: #a71d2a;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('.././fonts/Avenir-Bold.woff') format('woff'),
+       url('.././fonts/Avenir-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.circular-image123 {
+  top: 120px;
+  left: 475px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%; /* Asigură că imaginea este circulară */
+  border: 3px solid #61C6F9; /* Adaugă o bordură albastră */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adaugă o umbră pentru efect vizual */
+  position: fixed;
+}
+.grey-line {
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(127px, 8px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.grey-line1 {
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(127px, 15px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.grey-line2 {
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(127px, 14px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.grey-line3 {
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(127px, 10px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.grey-line4 {
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(127px, -9px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+
+.community-container {
+  padding: 20px; /* Poți ajusta padding-ul dacă e necesar */
+  font-family: 'Segoe UI', sans-serif;
+  color: #c4c8d4;
+  width: 450px; /* Setează lățimea dorită (mai scurtă) */
+  
+  margin: 0 auto; /* Centrează containerul orizontal */
+  box-sizing: border-box; /* Asigură că padding-ul este inclus în lățime */
+  transform: translateX(60px);
+}
+
+
+.community-section {
+  margin-bottom: 20px;
+}
+
+.community-title {
+  margin: 0;
+  font-size: 13px;
+  color: #C4C8D4;
+  white-space: nowrap;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.community-text {
+  margin: 0;
+  font-size: 12px;
+  color: #C4C8D4;
+  overflow: hidden; /* Ascunde textul care depășește lățimea containerului */
+  overflow: visible; /* Asigură că textul nu este tăiat */
+  text-overflow: clip; /* Elimină punctele de suspensie */
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 100;
+}
+.community-text1 {
+  margin: 0;
+  font-size: 13px;
+  color: #C4C8D4;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 100;
+  line-height: 1.5; /* Reglează spațierea între rânduri */
+  white-space: normal; /* Permite textului să se împartă pe mai multe rânduri */
+  word-wrap: break-word; /* Împarte cuvintele lungi */
+  display: -webkit-box; /* Activează modelul de box flexibil */
+  -webkit-line-clamp: 3; /* Limitează la 3 rânduri și un pic */
+  -webkit-box-orient: vertical; /* Orientează liniile vertical */
+  overflow: hidden; /* Ascunde partea din text care depășește */
+  text-overflow: ellipsis; 
+}
+
+.community-subtext {
+  font-size: 14px;
+  color: #a3abb6;
+}
+
+.community-link {
+  font-size: 13px;
+  color: #61c6f9;
+  text-decoration: none;
+}
+
+.community-link:hover {
+  text-decoration: underline;
+}
+
+.community-connection {
+  font-size: 14px;
+  color: #c4c8d4;
+  margin-bottom: 8px;
+}
+
+.community-email {
+  color: #c4c8d4;
+  font-size: 13px;
+  margin-top:10px;
+  transform: translateY(-400px) !important;
+}
+
+.community-search-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.community-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #3e4756;
+  border-radius: 6px;
+  background: #1d2733;
+  color: white;
+  font-size: 14px;
+}
+
+.community-friends-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.community-friend-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translateX(80px);
+  margin-left: 0px;
+  position: relative;
+  border: 2px solid #444;
+}
+
+.community-more-friends {
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  color: #61c6f9;
+  background-color: #1d2733;
+  border: 1px solid #3e4756;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(80px);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-more-friends:hover {
+  background-color: #74d0ff; /* Albastru deschis intens */
+  color: #1d2733; /* Textul devine închis (contrast mai bun) */
+  border-color: #74d0ff;
+  box-shadow: 0 0 10px rgba(116, 208, 255, 0.7); /* Glow effect */
+  transform: translateX(80px) scale(1.1); /* Ușor mai mare la hover */
+}
+
+.community-remove-link {
+  font-size: 14px;
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.community-remove-link:hover {
+  text-decoration: underline;
+}
+
+.community-delete-account {
+  font-size: 13px;
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.community-delete-account:hover {
+  text-decoration: underline;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Fixează dimensiunea barei de căutare */
+} 
+
+
+
+
+.community-search-input {
+  width: 100%;
+  padding: 8px 12px 8px 40px; /* Spațiu pentru iconiță */
+  border: 1px solid #3e4756;
+  border-radius: 6px;
+  background: #1d2733; /* Fundal întunecat */
+  color: #c4c8d4; /* Culoare text */
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-search-input:focus {
+  border-color: #61dafb; /* Bordură albastră deschisă la focus */
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; /* Poziționează lupa în interiorul barei de căutare */
+  font-size: 16px;
+  pointer-events: none; /* Previne click-ul pe lupă */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818aa4;
+}
+
+.community-search-input:focus + .search-icon {
+  opacity: 0; /* Ascunde iconița pe focus */
+  transition: opacity 0.3s ease;
+}
+.linie_gri{
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(1px, -8px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.linie_gri1{
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(1px, -8px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.linie_gri2{
+  width: 420px; /* Lățimea liniei */
+  height: 0.5px; /* Grosimea liniei */
+  background-color: rgba(122, 125, 134, 0.44); /* Culoarea liniei în RGBA */
+  transform: translate(1px, -8px); /* Deplasare pe X (127px spre dreapta) și Y (8px mai jos) */
+  position: relative; /* Permite utilizarea transformării */
+}
+.mail{
+  margin-top:8px;
+  margin-right: 10px;
+}
+.text-label123 {
+  top: 270px; /* Poziția verticală la fel ca în circular-image123 */
+  left: 520px; /* Poziția orizontală la fel ca în circular-image123 */
+  position: fixed; /* Fixat pe ecran */
+  z-index: 10; /* Z-index mai mare pentru a fi deasupra altor elemente */
+  font-size: 14px; /* Dimensiunea fontului din .section h3 */
+  color: #C4C8D4; /* Culoarea textului din .section h3 */
+  white-space: nowrap; /* Previne întreruperea textului */
+  font-family: 'Segoe UI', sans-serif; /* Familia de fonturi din .section h3 */
+  margin: 0; /* Elimină marginile implicite */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Efect de tranziție pentru hover */
+}
+
+.text-label123:hover {
+  color: #40E0D0; /* Albastru turcoaz la hover */
+  text-shadow: 0 0 10px #40E0D0; /* Efect de strălucire */
+}
+
+
+
+
+
+  
