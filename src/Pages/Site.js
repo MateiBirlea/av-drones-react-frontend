@@ -130,18 +130,25 @@ function Site() {
       }
 
       useEffect(() => {
-        //console.log(utilizator); 
-        const local_profile=localStorage.getItem('user');
-        const parseduser=JSON.parse(local_profile);
-        if(local_profile)
-        {
-          setPreview(parseduser.profile);
-          console.log("URL Profil",preview);
-          setUtilizator(parseduser);
-          setEmail(parseduser.email);
+        const local_profile = localStorage.getItem('user');
+        console.log("local_profile:", local_profile); // Verifică ce este salvat
+        
+        if (local_profile) {
+            try {
+                const parseduser = JSON.parse(local_profile);
+                setPreview(parseduser.profile);
+                console.log("URL Profil", preview);
+                setUtilizator(parseduser);
+                setEmail(parseduser.email);
+            } catch (error) {
+                console.error("JSON parsing error:", error);
+                localStorage.removeItem('user'); // Șterge datele corupte
+            }
+        } else {
+            console.warn("No user data in localStorage!");
         }
-       
-      }, [counter]);
+    }, [counter]);
+    
       useEffect(() => {
         console.log("Preview după setare:", preview); 
         /*let stored=JSON.parse(localStorage.getItem('user'));
