@@ -14,13 +14,13 @@ const ChangePasswordPopup = ({ onClose }) => {
         if(pass1===pass2)
         {
             setError("");
-            Axios.post('http://localhost:8081/verify_password',{
+            Axios.post('https://av-drones-react-backend-production.up.railway.app/verify_password',{
                 id:id,
                 pass:pass3
             }).then((response)=>{
                 if(response.data.message)
                 {
-                    Axios.post('http://localhost:8081/change_password',{
+                    Axios.post('https://av-drones-react-backend-production.up.railway.app/change_password',{
                         id:id,
                         pass:pass2
                     }).then((response)=>{

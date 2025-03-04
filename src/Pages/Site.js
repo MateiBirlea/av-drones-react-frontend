@@ -84,7 +84,7 @@ function Site() {
         const formData = new FormData();
         formData.append('profileImage', file);
         try {
-          const response = await axios.post('http://localhost:8081/upload', formData, {
+          const response = await axios.post('https://av-drones-react-backend-production.up.railway.app/upload', formData, {
               headers: {
                   'Content-Type': 'multipart/form-data',
               },
@@ -97,7 +97,7 @@ function Site() {
           parseduser.profile=response.data.url;
           localStorage.setItem('user',JSON.stringify(parseduser));
           console.log('Email:',parseduser.email);
-          Axios.post('http://localhost:8081/profile_set',{
+          Axios.post('https://av-drones-react-backend-production.up.railway.app/profile_set',{
             emailn:parseduser.email,
             urln:response.data.url
           }).then((response)=>{

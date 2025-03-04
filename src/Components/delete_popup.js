@@ -16,7 +16,7 @@ const DeleteAccountPopup = ({ onClose }) => {
       },[])
     const delete_account=(e)=>{
         e.preventDefault(); 
-        Axios.post('http://localhost:8081/delete_account',{
+        Axios.post('https://av-drones-react-backend-production.up.railway.app/delete_account',{
            id:id
         }).then((response)=>{
             if(response.data.message)

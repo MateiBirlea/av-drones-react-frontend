@@ -24,7 +24,7 @@ const EmailPopup = ({ onClose }) => {
    if(email)
    {
     e.preventDefault();
-    Axios.post('http://localhost:8081/change_email',{
+    Axios.post('https://av-drones-react-backend-production.up.railway.app/change_email',{
         id:id,
         email:email
     }).then((response)=>{

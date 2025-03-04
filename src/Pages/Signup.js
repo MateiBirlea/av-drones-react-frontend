@@ -26,7 +26,7 @@ function Signup() {
     {
       return;
     }
-    Axios.post("http://localhost:8081/register", {
+    Axios.post("https://av-drones-react-backend-production.up.railway.app/register", {
       firstn: first_name_reg,
       lastn: last_name_reg,
       email: email_reg,

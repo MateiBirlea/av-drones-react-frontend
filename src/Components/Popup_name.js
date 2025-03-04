@@ -29,7 +29,7 @@ const PopupChangeNameUnique = ({ onClose, onChangeName }) => {
         if(name)
         {
           e.preventDefault();
-          Axios.post('http://localhost:8081/change_name',{
+          Axios.post('https://av-drones-react-backend-production.up.railway.app/change_name',{
               name:name,
               email:email
           }).then((response)=>{

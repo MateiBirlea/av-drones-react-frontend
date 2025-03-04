@@ -18,13 +18,13 @@ const Popup_username = ({ onClose }) => {
    if(username)
    {
       e.preventDefault();
-      Axios.post('http://localhost:8081/verify_username',{
+      Axios.post('https://av-drones-react-backend-production.up.railway.app/verify_username',{
         username:username
       }).then((response)=>{
         if(response.data.message)
         {
             console.log("Username valid");
-            Axios.post('http://localhost:8081/change_username',{
+            Axios.post('https://av-drones-react-backend-production.up.railway.app/change_username',{
                 id:id,
                 username:username
             }).then((response)=>{
