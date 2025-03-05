@@ -7,6 +7,15 @@ import Popup from "../Components/Popup";
 import Signup from './Signup';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom'; 
 import { useLocation } from 'react-router-dom';
+import forest from './images/forest.jpg'
+import forest2 from './images/forest2.jpg'
+import river from './images/river.jpg'
+import scanning1 from './images/scanning1.jpg'
+import scanning2 from './images/scanning2.jpg'
+import scanning3 from './images/scanning3.jpg'
+import product1 from './images/product1.jpg'
+import product2 from './images/product2.jpg'
+import product3 from './images/product3.jpg'
 import Rectangle35 from './images/Rectangle 35.png';
 import Rectangle118 from './images/Rectangle 118.png';
 import PauseButton from  './images/Pause Button.png';
@@ -40,6 +49,10 @@ import ellipse3 from "./images/Ellipse 3.png";
 import rectangle152 from "./images/Rectangle 152.png";
 import user1 from "./images/ue.png";
 import LoginFirstPopup from "../Components/Login_firs";
+import Popup_gallery from '../Components/Popup_gallery';
+import Popup_gallery_3d from '../Components/Popup_gallery_3d';
+import Popup_info from '../Components/Popup_info';
+import Popup_gallery_p from '../Components/Popup_gallery_p';
 import React,{ useState,useEffect,useContext } from 'react';
 import { CounterContext } from "../Context/CounterContext";
 function Site() {
@@ -51,7 +64,12 @@ function Site() {
     const [preview, setPreview] = useState(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [login_popup,setLogin_popup]=useState(false);
+    const [entry_info,setEntry_info]=useState(false);
+    const [gallery_photo,setGalleryphoto]=useState(false);
+    const [gallery_photo_3d,setGalleryphoto_3d]=useState(false);
+    const [gallery_photo_t,setGalleryphoto_t]=useState(false);
     const {counter}=useContext(CounterContext);
+    const images = [forest, forest2, river];
   const handleOpenPopup = () => {
     const local_profile=localStorage.getItem('user');
     if(local_profile)
@@ -61,10 +79,22 @@ function Site() {
        setLogin_popup(true);
     }
   };
+  const close_gallery_photo=()=>{setGalleryphoto(false)}
+  const open_gallery_photo=()=>{setGalleryphoto(true)}
+  const close_gallery_photo_3d=()=>{setGalleryphoto_3d(false)}
+  const open_gallery_photo_3d=()=>{setGalleryphoto_3d(true)}
+  const close_gallery_photo_t=()=>{setGalleryphoto_t(false)}
+  const open_gallery_photo_t=()=>{setGalleryphoto_t(true)}
   const closeLog=()=>{setLogin_popup(false)}
   const handleClosePopup = () => {
     setIsPopupOpen(false);
   };
+  const openEntry=()=>{
+    setEntry_info(true);
+  }
+  const closeEntry=()=>{
+    setEntry_info(false);
+  }
    const image_upload=async(e)=>{
         const file=e.target.files[0];
         const user=localStorage.getItem('user');
@@ -186,10 +216,10 @@ function Site() {
       <div className="left">
              <nav>
               <ul className="layout-nav">
-                 <li><a href="#">ENTRY INFO</a></li>
-                 <li><a href="#">PRODUCTS</a></li>
-                 <li><a href="#">PHOTO & VIDEO</a></li>
-                 <li><a href="#">3D CAPTURING</a></li>
+                 <li><a onClick={openEntry}href="#">ENTRY INFO</a></li>
+                 <li><a onClick={open_gallery_photo_t}href="#">PRODUCTS</a></li>
+                 <li><a onClick={open_gallery_photo}href="#">PHOTO & VIDEO</a></li>
+                 <li><a onClick={open_gallery_photo_3d}href="#">3D CAPTURING</a></li>
              </ul>
             </nav>
               <div>
@@ -377,6 +407,18 @@ function Site() {
       </div>
       <div>
         {login_popup && <LoginFirstPopup onClose={closeLog}/>}
+      </div>
+      <div>
+      {entry_info && <Popup_info onClose={closeEntry}/>}
+      </div>
+      <div>
+      { gallery_photo&&<Popup_gallery images={[forest, forest2, river]} onClose={close_gallery_photo} />}
+      </div>
+      <div>
+      { gallery_photo_3d&&<Popup_gallery_3d images={[scanning1,scanning2,scanning3]} onClose={close_gallery_photo_3d} />}
+      </div>
+      <div>
+      { gallery_photo_t&&<Popup_gallery_p images={[product1,product2,product3]} onClose={close_gallery_photo_t} />}
       </div>
  </div>
 

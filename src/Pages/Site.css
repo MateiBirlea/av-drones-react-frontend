@@ -801,3 +801,136 @@ margin-left: -45px;
   text-shadow: 0 0 10px #40E0D0; /* Adaugă efectul de strălucire */
 }
 
+/* Gallery CSSS*/
+/* Fundal blurat pentru pop-up */
+/* Fundal blurat pentru pop-up */
+.gallery-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+/* Stil pentru fereastra pop-up */
+.gallery-popup-content {
+  background: linear-gradient(135deg, #1e293b 10%, #27384e 90%);
+  width: 48vw;
+  max-width: 75%;
+  padding: 3vh 2vw;
+  border-radius: 1.5vw;
+  text-align: center;
+  box-shadow: 0px 0.8vw 1.5vw rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: fadeInPopup 0.4s ease-in-out;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.15vw solid rgba(255, 255, 255, 0.2);
+}
+
+/* Buton de închidere - stil profesional */
+.gallery-popup-close-btn {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #94a3b8;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s ease-in-out;
+}
+
+.gallery-popup-close-btn:hover {
+  color: #f8fafc;
+  transform: scale(1.2);
+}
+
+/* Container imagine cu efect de focus */
+.gallery-image-container {
+  width: 100%;
+  max-height: 55vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  box-shadow: inset 0px 0px 1vw rgba(255, 255, 255, 0.05);
+}
+
+.gallery-image-container img {
+  width: 90%;
+  height: auto;
+  border-radius: 1vw;
+  box-shadow: 0px 0.3vw 1vw rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.gallery-image-container img:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* Butoane navigare - efect mai avansat */
+.gallery-prev-btn,
+.gallery-next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  font-size: 2.2vw;
+  font-weight: bold;
+  padding: 1vw;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.2s ease-in-out;
+  box-shadow: 0px 0.4vw 0.8vw rgba(0, 0, 0, 0.3);
+}
+
+.gallery-prev-btn:hover,
+.gallery-next-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.15);
+}
+
+.gallery-prev-btn {
+  left: 2vw;
+}
+
+.gallery-next-btn {
+  right: 2vw;
+}
+
+/* Efect fade-in */
+@keyframes fadeInPopup {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

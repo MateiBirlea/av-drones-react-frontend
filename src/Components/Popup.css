@@ -537,6 +537,119 @@ body {
   text-shadow: 0 0 10px #40E0D0; /* Efect de strălucire */
 }
 
+/* Popup INFO*/
+/* Fundal blurat pentru pop-up */
+/* Fundal blurat pentru pop-up */
+.avd-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Mai întunecat pentru un efect premium */
+  backdrop-filter: blur(1.5vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Stil pentru fereastra pop-up */
+.avd-popup-content {
+  background: #1e293b; /* Albastru-închis pentru un look modern */
+  width: 60vw;
+  max-width: 80%;
+  padding: 3vh 2vw;
+  border-radius: 1.5vw;
+  text-align: left;
+  box-shadow: 0px 0.4vw 1.5vw rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: avd-fadeIn 0.3s ease-in-out;
+  color: #e2e8f0; /* Text deschis pentru contrast */
+}
+
+/* Buton subtil de închidere (X) */
+.avd-popup-close-btn {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #94a3b8;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.avd-popup-close-btn:hover {
+  color: #f8fafc;
+}
+
+/* Titlu */
+.avd-popup-title {
+  font-size: 2vw;
+  font-weight: bold;
+  color: #f8fafc;
+  margin-bottom: 1.5vh;
+}
+
+/* Text și liste */
+.avd-popup-text {
+  font-size: 1.5vw;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.avd-popup-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.avd-popup-list li {
+  margin-bottom: 1.2vh;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.avd-popup-list li strong {
+  color: #f8fafc;
+}
+
+/* Buton de confirmare */
+.avd-popup-confirm-btn {
+  background: #dc2626; /* Roșu închis pentru un look elegant */
+  color: white;
+  border: none;
+  padding: 1.2vh 2vw;
+  border-radius: 0.8vw;
+  cursor: pointer;
+  margin-top: 3vh;
+  font-size: 1.6vw;
+  font-weight: bold;
+  display: block;
+  width: 12vw;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.avd-popup-confirm-btn:hover {
+  background: #b91c1c;
+}
+
+/* Efect fade-in */
+@keyframes avd-fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 
 
