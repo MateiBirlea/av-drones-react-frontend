@@ -114,7 +114,6 @@ function Site() {
       }
   };
         
-   
     const toggleSidebar = () => {
         const sidebar = document.querySelector('.side-nav');
         sidebar.classList.toggle('active');
@@ -182,7 +181,7 @@ function Site() {
       
   return (
     
-  <div>
+  <div className="no-zoom">
     <div className="background">
       <div className="left">
              <nav>
@@ -210,7 +209,7 @@ function Site() {
           <img src={Rectangle123} className="rectangle2" />
           <h1  className="play_video">PLAY VIDEO</h1>
         </div>*/}
-        <div>
+        
           <img src={Rectabgle34} className="line_v1" />
           <img src={Rectangle33} className="line_v2" />
           <h1 className="mouse_scroll">Mouse scroll</h1>
@@ -219,7 +218,7 @@ function Site() {
           <img src={manu} className="menu" onClick={toggleSidebar} />
           <h1 className="av_register" onClick={s_up}>Log In / Sign Up</h1>
           <h1 className="av_register1" onClick={logout}>Log Out</h1>
-        </div>
+        
        
         <div className='side-nav'>
            <div className='panel'>

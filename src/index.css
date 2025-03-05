@@ -5,6 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;  /* Elimină scroll-ul */
+    zoom: 1;  /* Forțează scalarea la 100% */
+    transform: none !important; /* Dezactivează orice scalare */
+    user-zoom: fixed; /* Blochează zoom-ul pe unele browsere */
+    touch-action: pan-x pan-y;
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;  /* Elimină scroll-ul */
+  zoom: 1;  /* Forțează scalarea la 100% */
+  transform: none !important; /* Dezactivează orice scalare */
+  user-zoom: fixed; /* Blochează zoom-ul pe unele browsere */
+  touch-action: pan-x pan-y; /* Dezactivează gesturile de zoom pe mobil */
 }
 
 code {

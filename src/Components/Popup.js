@@ -90,7 +90,9 @@ const Popup = ({ onClose }) => {
       
     }
   }
- 
+ const refresh_pagina=()=>{
+  window.location.href = window.location.href;
+ }
   const handleSelect=(user)=>{
       setSelectedUser(user.username);
       const profile=localStorage.getItem('user');
@@ -163,7 +165,7 @@ const Popup = ({ onClose }) => {
         }else if(response.data.message)
            {
               console.log(response.data.message);
-              
+              window.location.href = window.location.href;
            }
       })
   } catch (error) {
@@ -171,9 +173,21 @@ const Popup = ({ onClose }) => {
   }
   
 };
-const handleFileChange = (event) => {
-  image_upload(event).then(() => counterIncrement()); 
+const handleFileChange = async (event) => {
+  await image_upload(event); // Încarcă imaginea
+
+  setTimeout(() => {
+    document.getElementById("refresh-link").href = window.location.href;
+    document.getElementById("refresh-link").click(); // Forțează refresh
+  }, 1000); // După 1 secundă
 };
+const forceRefresh = () => {
+  setTimeout(() => {
+    window.location.href = window.location.href;
+  }, 1500); // Refresh după 1.5 secunde
+};
+
+
 
   useEffect(()=>{
        const profile=localStorage.getItem('user');
@@ -321,6 +335,7 @@ const unreadRequests = friendRequests ? Math.max(friendRequests.length - seenReq
           <div className="tab-content">
             
             <div className="circular-image1"  >
+               <a href="" id="refresh-link" style={{ display: "none" }}></a>
                <img src={url}    className="circular-image123" />
               <input
                 type="file"
@@ -329,7 +344,7 @@ const unreadRequests = friendRequests ? Math.max(friendRequests.length - seenReq
                 onChange={handleFileChange}
                 style={{ display: 'none' }}
               />
-              <label htmlFor="file-input" className="text-label123" >Upload</label>
+              <label htmlFor="file-input" className="text-label123"   >Upload</label>
              
             </div>
 
