@@ -11,21 +11,7 @@ import { CounterProvider } from './Context/CounterContext';
 import DeleteAccountPopup from './Components/delete_popup';
 function App() {
 
-  useEffect(() => {
-   
-    document.body.style.zoom = "100%";
-
-    
-    window.addEventListener("resize", () => {
-      document.body.style.zoom = "100%";
-    });
-
-    return () => {
-      window.removeEventListener("resize", () => {
-        document.body.style.zoom = "100%";
-      });
-    };
-  }, []);
+  
 
 
   return (
