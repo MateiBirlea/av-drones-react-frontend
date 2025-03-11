@@ -14,8 +14,8 @@ import scanning1 from './images/scanning1.jpg'
 import scanning2 from './images/scanning2.jpg'
 import scanning3 from './images/scanning3.jpg'
 import product1 from './images/product1.jpg'
-import product2 from './images/product2.jpg'
-import product3 from './images/product3.jpg'
+import product2 from './images/product5.jpg'
+import product3 from './images/product6.jpg'
 import Rectangle35 from './images/Rectangle 35.png';
 import Rectangle118 from './images/Rectangle 118.png';
 import PauseButton from  './images/Pause Button.png';
@@ -415,7 +415,7 @@ function Site() {
       { gallery_photo&&<Popup_gallery images={[forest, forest2, river]} onClose={close_gallery_photo} />}
       </div>
       <div>
-      { gallery_photo_3d&&<Popup_gallery_3d images={[scanning1,scanning2,scanning3]} onClose={close_gallery_photo_3d} />}
+      { gallery_photo_3d&&<Popup_gallery_3d images={[scanning1,scanning2]} onClose={close_gallery_photo_3d} />}
       </div>
       <div>
       { gallery_photo_t&&<Popup_gallery_p images={[product1,product2,product3]} onClose={close_gallery_photo_t} />}
