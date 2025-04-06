@@ -3,7 +3,8 @@ function validation(first_name, last_name, email, password) {
     
     
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
 
  
  if (!email_pattern.test(email)) {
